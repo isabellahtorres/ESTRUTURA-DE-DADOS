@@ -1,2 +1,11 @@
 # ESTRUTURA DE DADOS
- repositório para armazenar trabalhos da disciplina estrutura de dados.
+ Repositório de trabalhos da disciplina de estrutura de dados:
+ - Árvore binária
+ - Árvore binaária de busca
+ - AVL
+ - Backtracking
+ - Hashing
+ - Heap
+ - Grafo
+ - Estruturas Genéricas
+ - Tipo abstrato de dados
