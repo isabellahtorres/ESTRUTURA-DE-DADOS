@@ -7,5 +7,4 @@ int pop(Fila f, int *x);
 void imprimir(Fila p);
 Fila inicializar();
 Fila destruir(Fila f);
-void imprimeMenu();
 #endif
