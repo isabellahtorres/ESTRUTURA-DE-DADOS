@@ -1,5 +1,5 @@
 //Isabella Torres e João Victor Spala
-//todas as combinações de {a, e, i, o, u}, de tamanho n, que o numero de a's é maior que a soma totais de e's e i's
+//todas as combinações de {a, e, i, o, u}, de tamanho n, que o numero de a's é maior que a soma totais de e's e i's.
 #include <stdio.h>
 #include <stdlib.h>
 
