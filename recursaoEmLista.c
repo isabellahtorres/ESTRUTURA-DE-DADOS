@@ -63,38 +63,20 @@ int contaOcorrencias(lista *l, int x)
 // remover um elemento x da lista
 lista *remover(lista *l, int x)
 {
-    if (l == NULL)
-        return l;
-
-    if (l->info == x)
+    if (l != NULL)
     {
-        lista *temp = l;
-        l = l->prox;
-        free(temp);
-        printf("elemento %d removido da lista.\n", x);
-        return l;
+        if (l->info == x)
+        {
+            lista *aux = l->prox;
+            free(l);
+            printf("elemento %d removido da lista.\n", x);
+            return aux;
+        }
+        else
+        {
+            l->prox = remover(l->prox, x);
+        }
     }
-
-    lista *anterior = l;
-    lista *atual = l->prox;
-
-    while (atual != NULL && atual->info != x)
-    {
-        anterior = atual;
-        atual = atual->prox;
-    }
-
-    if (atual != NULL)
-    {
-        anterior->prox = atual->prox;
-        free(atual);
-        printf("elemento %d removido da lista.\n", x);
-    }
-    else
-    {
-        printf("elemento %d não encontrado na lista.\n", x);
-    }
-
     return l;
 }
 
@@ -114,7 +96,6 @@ int main()
     lista *l = NULL;
     l = insereFinal(l, 2);
     l = insereFinal(l, 2);
-    l = insereFinal(l, 3);
     l = insereFinal(l, 2);
     l = insereFinal(l, 4);
     l = insereFinal(l, 6);
@@ -123,10 +104,9 @@ int main()
     imprimeLista(l);
     printf("\n");
 
-    int elemento = 3;
+    int elemento = 6;
     int ocorrencias = contaOcorrencias(l, elemento);
     printf("o elemento %d aparece %d vezes na lista.\n", elemento, ocorrencias);
-
     l = remover(l, elemento);
     printf("lista: ");
     imprimeLista(l);
