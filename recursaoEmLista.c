@@ -49,8 +49,14 @@ int contaOcorrencias(lista *l, int x)
         return 0;
     else
     {
-        int cont = (l->info == x) ? 1 : 0;
-        return cont + contaOcorrencias(l->prox, x);
+        if (l->info == x)
+        {
+            return 1 + contaOcorrencias(l->prox, x);
+        }
+        else
+        {
+            return contaOcorrencias(l->prox, x);
+        }
     }
 }
 
